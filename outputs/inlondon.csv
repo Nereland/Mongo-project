@@ -1,0 +1,5 @@
+,level_0,index,name,category_code,founded_year,latitude,longitude,geopoint
+0,0,12,amiando,web,2006,51.5248598,-0.0836311,"{'type': 'Point', 'coordinates': [-0.0836311, 51.5248598]}"
+1,1,16,Playfish,games_video,2007,51.4991094,-0.1984802,"{'type': 'Point', 'coordinates': [-0.1984802, 51.4991094]}"
+2,2,29,TweetDeck,software,2008,51.5001524,-0.1262362,"{'type': 'Point', 'coordinates': [-0.1262362, 51.5001524]}"
+3,3,30,Saffron Digital,games_video,2006,,,
