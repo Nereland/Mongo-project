@@ -5,6 +5,8 @@ import dotenv
 from dotenv import load_dotenv
 import requests
 load_dotenv()
+import numpy as np
+
 def getfromgooglecloud(queryParams={}):
     url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
     res = requests.get(url, params=queryParams)
@@ -23,3 +25,23 @@ def getQueryParams(lat,long,radius,sort,keyword):
     "type":sort,
     "keyword":keyword,
     "key":f'{apiKey}'}
+
+
+def toGetGeometry(data):
+    infor = []
+    for j in range(len(data)):
+        info ={"name": data[j]["name"], 
+               "latitude":data[j]["geometry"]["location"]["lat"], 
+               "longitude": data[j]["geometry"]["location"]["lng"]}
+        infor.append(info)
+    return infor
+
+
+
+def transformToGeoPoint(s):
+    if np.isnan(s.latitude) or np.isnan(s.longitude):
+        return None
+    return {
+        "type":"Point",
+        "coordinates":[s.longitude, s.latitude]
+    }
